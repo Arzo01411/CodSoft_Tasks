@@ -1,0 +1,67 @@
+package grade_calculator;
+import java.util.* ;
+public class student_grade_calculator {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in) ;
+		
+		
+		
+		// For the user to input the number of marks in different subjects out of 100.
+		int n = sc.nextInt();
+		
+		// An array to store the values.
+		
+		// int arr[] = new int[n] ; - What if,the user enters some values of marks in float
+		// therefore we will create an array with double variable to avoid such mistakes.
+		
+		float arr[] = new float[n] ;
+		
+		int i ;
+		for(i=0;i<n;i++) {
+			arr[i] = sc.nextFloat() ;
+		}
+		
+		float sum = 0 ; // To calculate the sum 
+		float average = 0 ; // To calculate the average
+		
+		for(i=0;i<n;i++) {
+			sum = sum + arr[i] ;
+			average = sum/n ;
+		}
+		
+		System.out.println("Total marks obtained is : " + sum) ;
+		System.out.println("Average of the marks obtained is : " + average) ;
+		
+		if(average>=90) {
+			System.out.println("Grade : A") ;
+			System.out.println("Excellent!!") ;
+		}
+		else if(average>=80 && average<=90) {
+			System.out.println("Grade : B") ;
+			System.out.println("You did great!!") ;
+		}
+		else if(average>=70 && average<=80) {
+			System.out.println("Grade : C") ;
+			System.out.println("You made it") ;
+		}
+		else if(average>=60 && average<=70) {
+			System.out.println("Grade : D") ;
+			System.out.println("Good!!") ;
+		}
+		else if(average>=50 && average<=60) {
+			System.out.println("Grade : E") ;
+			System.out.println("It's okay") ;
+		}
+		else if(average>=40 && average<=50) {
+			System.out.println("Grade : E-") ;
+			System.out.println("Work hard!!") ;
+		}
+		else {
+			System.out.println("Grade : F") ;
+			System.out.println("It's okay you can try next time! There's always a second chance.");
+		}
+
+	}
+
+}
